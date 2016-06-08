@@ -7,6 +7,4 @@ RUN curl -o app.jar http://10.63.39.117:8081/artifactory/libs-release-local/org/
 ADD app.jar
 
 
-RUN sh -c 'touch /app.jar'
-
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
