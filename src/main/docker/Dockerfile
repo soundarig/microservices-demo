@@ -2,9 +2,9 @@ FROM frolvlad/alpine-oraclejdk8:slim
 
 VOLUME /tmp
 
-RUN curl -o app.jar http://10.63.39.117:8081/artifactory/libs-release-local/org/springframework/samples/service/service/microservice-demo/1.1.0.RELEASE/microservice-demo-1.1.0.RELEASE.jar
+#RUN curl -o app.jar http://10.63.39.117:8081/artifactory/libs-release-local/org/springframework/samples/service/service/microservice-demo/1.1.0.RELEASE/microservice-demo-1.1.0.RELEASE.jar
 
-ADD app.jar
+ADD http://10.63.39.117:8081/artifactory/libs-release-local/org/springframework/samples/service/service/microservice-demo/1.1.0.RELEASE/microservice-demo-1.1.0.RELEASE.jar app.jar
 
 
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
